@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CoreWebTinhTien.Domain.NguyenLieu, CoreWebTinhTien" table="NguyenLieu" >
+    <id name="Id" column="Id" type="int">
+      <generator class="identity"/>
+    </id>
+    <property name="Ten" column="Ten" type="string" length="500" />
+    <property name="Ma" column="Ma" type="string" length="100" />
+    <property name="CongTyId" column="CongTyId" type="int" />
+    <property name="Dai" column="Dai" type="decimal"  />
+    <property name="Rong" column="Rong" type="decimal"  />
+    <property name="Cao" column="Cao" type="decimal"  />
+    <property name="DonViTinh" column="DonViTinh" type="string" length="100" />
+    <property name="DinhLuong" column="DinhLuong" type="decimal"  />
+    <property name="SoLuong" column="SoLuong" type="int"  />
+    <property name="SoM3" column="SoM3" type="decimal"  />
+    <property name="DonGia" column="DonGia" type="decimal"  />
+    <property name="ThanhTien" column="ThanhTien" type="decimal"  />
+  </class>
+
+</hibernate-mapping>

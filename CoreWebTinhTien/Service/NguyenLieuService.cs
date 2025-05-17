@@ -1,0 +1,18 @@
+﻿using CoreWebTinhTien.BaseServices;
+using CoreWebTinhTien.Domain;
+using CoreWebTinhTien.IService;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CoreWebTinhTien.Service
+{
+    public class NguyenLieuService : BaseService<NguyenLieu, int>, INguyenLieuService
+    {
+        public NguyenLieuService(string sessionFactoryConfigPath) : base(sessionFactoryConfigPath)
+        { }
+
+    }
+}

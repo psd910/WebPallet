@@ -1,0 +1,90 @@
+﻿@model IList<CoreWebTinhTien.Domain.NguyenLieu>
+@{
+    ViewBag.Title = "Danh sách nguyên liệu";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Sử dụng layout của AdminLTE
+}
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <h1>Danh sách nguyên liệu</h1>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <a href="@Url.Action("TaoMoi")" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Thêm mới
+                    </a>
+                </div>
+                <div class="card-body">
+                    <table id="dichvu-table" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Mã</th>
+                                <th>Tên</th>
+                                <th>Dài</th>
+                                <th>Rộng</th>
+                                <th>Cao</th>
+                                <th>Đơn vị</th>
+                                <th>Định lượng</th>
+                                <th>Số lượng</th>
+                                <th>Số m3</th>
+                                <th>Đơn giá</th>
+                                <th>Thành tiền</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null && Model.Any())
+                            {
+                                foreach (var item in Model)
+                                {
+                            <tr>
+                                <td>@item.Ma</td>
+                                <td>@item.Ten</td>
+                                <td>@item.Dai</td>
+                                <td>@item.Rong</td>
+                                <td>@item.Cao</td>
+                                <td>@item.DonViTinh</td>
+                                <td>@item.DinhLuong</td>
+                                <td>@item.SoLuong</td>
+                                <td>@(item.SoM3.ToString("N2"))</td>
+                                <td>@item.DonGia.ToString("N0")</td>
+                                <td>@(item.ThanhTien.ToString("N0"))</td>
+                                <td>
+                                    <a href="@Url.Action("ChinhSua", new { id = item.Id })" class="btn btn-sm btn-warning">
+                                        <i class="fas fa-edit"></i> Sửa
+                                    </a>
+                                    <a href="@Url.Action("Xoa", new { id = item.Id })" class="btn btn-sm btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa?');">
+                                        <i class="fas fa-trash-alt"></i> Xóa
+                                    </a>
+                                </td>
+                            </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="3" class="text-center">Không có dữ liệu</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+@section Scripts {
+    <script>
+        $(function () {
+            $('#dichvu-table').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Vietnamese.json"
+                }
+            });
+        });
+    </script>
+}

@@ -68,14 +68,26 @@
     <Compile Include="BaseServices\BaseMultipleService.cs" />
     <Compile Include="BaseServices\BaseService.cs" />
     <Compile Include="BaseServices\IBaseService.cs" />
+    <Compile Include="Domain\DonHangChiTiet.cs" />
+    <Compile Include="Domain\DonHang.cs" />
+    <Compile Include="Domain\NguyenLieu.cs" />
+    <Compile Include="Domain\DichVu.cs" />
     <Compile Include="Domain\NguoiDung.cs" />
     <Compile Include="Ioc\IoC.cs" />
+    <Compile Include="IService\IDonHangChiTietService.cs" />
+    <Compile Include="IService\IDonHangService.cs" />
+    <Compile Include="IService\INguyenLieuService.cs" />
+    <Compile Include="IService\IDichVuService.cs" />
     <Compile Include="IService\INguoiDungService.cs" />
     <Compile Include="NHibernateSession\CallContext.cs" />
     <Compile Include="NHibernateSession\DesignByContract.cs" />
     <Compile Include="NHibernateSession\NHibernateSessionManager.cs" />
     <Compile Include="NHibernateSession\SQLParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\DonHangChiTietService.cs" />
+    <Compile Include="Service\DonHangService.cs" />
+    <Compile Include="Service\NguyenLieuService.cs" />
+    <Compile Include="Service\DichVuService.cs" />
     <Compile Include="Service\NguoiDungService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +97,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\DichVu.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\NguyenLieu.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\DonHang.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\DonHangChiTiet.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

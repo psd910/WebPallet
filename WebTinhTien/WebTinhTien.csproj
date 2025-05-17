@@ -129,7 +129,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DonHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NguyenLieuController.cs" />
+    <Compile Include="Controllers\DichVuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -178,13 +181,22 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="services.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Views\DichVu\DanhSach.cshtml" />
+    <Content Include="Views\DichVu\TaoMoi.cshtml" />
+    <Content Include="Views\DichVu\ChinhSua.cshtml" />
+    <Content Include="Views\NguyenLieu\ChinhSua.cshtml" />
+    <Content Include="Views\NguyenLieu\DanhSach.cshtml" />
+    <Content Include="Views\NguyenLieu\TaoMoi.cshtml" />
+    <Content Include="Views\DonHang\ChinhSua.cshtml" />
+    <Content Include="Views\DonHang\DanhSach.cshtml" />
+    <Content Include="Views\DonHang\TaoMoi.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
