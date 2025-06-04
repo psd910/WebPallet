@@ -81,6 +81,8 @@
                 const tbody = $("#chiTietTable tbody");
                 const row = `
                                             <tr>
+                                                <td><input name="ChiTietSanPhams[${rowIndex}].Ma" class="form-control"  required /></td>
+                                                <td><input name="ChiTietSanPhams[${rowIndex}].Ten" class="form-control" required /></td>
                                                 <td><input name="ChiTietSanPhams[${rowIndex}].Dai" class="form-control" type="number" step="0.01" required /></td>
                                                 <td><input name="ChiTietSanPhams[${rowIndex}].Rong" class="form-control" type="number" step="0.01" required /></td>
                                                 <td><input name="ChiTietSanPhams[${rowIndex}].Cao" class="form-control" type="number" step="0.01" required /></td>
