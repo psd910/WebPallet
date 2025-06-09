@@ -14,5 +14,9 @@ namespace CoreWebTinhTien.Service
         public NguyenLieuService(string sessionFactoryConfigPath) : base(sessionFactoryConfigPath)
         { }
 
+        public NguyenLieu GetNguyenLieuByMa(string ma)
+        {
+            return Query.Where(dv => dv.Ma == ma).FirstOrDefault();
+        }
     }
 }

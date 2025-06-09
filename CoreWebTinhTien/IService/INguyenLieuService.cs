@@ -5,6 +5,6 @@ namespace CoreWebTinhTien.IService
 {
     public interface INguyenLieuService : IBaseService<NguyenLieu, int>
     {
-
+        NguyenLieu GetNguyenLieuByMa(string ma);
     }
 }

@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- icheck bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/icheck-bootstrap@3.0.1/icheck-bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- AdminLTE -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
 
@@ -60,7 +62,12 @@
                                 <p>Dashboard</p>
                             </a>
                         </li>
-                        <!-- Thêm menu khác ở đây -->
+                        <li class="nav-item">
+                            <a href="~/NguoiDung/DanhSach" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>Người dùng</p>
+                            </a>
+                        </li>
 
                         <li class="nav-item">
                             <a href="~/DichVu/DanhSach" class="nav-link">
@@ -102,10 +109,53 @@
     <!-- jQuery -->
     <script src="/Content/js/jquery.min.js"></script>
     <!-- Bootstrap -->
+
     <script src="/Content/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE -->
     <script src="/Content/js/adminlte.min.js"></script>
 
     @RenderSection("Scripts", required: false)
+    @{
+        var thongBao = TempData["ThongBao"] as string;
+        var loaiThongBao = TempData["LoaiThongBao"] as string ?? "info";
+
+        string alertClass = "bg-info text-white";
+        switch (loaiThongBao)
+        {
+            case "success":
+                alertClass = "bg-success text-white";
+                break;
+            case "danger":
+                alertClass = "bg-danger text-white";
+                break;
+            case "warning":
+                alertClass = "bg-warning text-dark";
+                break;
+        }
+    }
+
+    @if (!string.IsNullOrEmpty(thongBao))
+    {
+        <div style="position: fixed; top: 20px; right: 20px; z-index: 1055; min-width: 300px;">
+            <div class="toast align-items-center show @alertClass" id="toastThongBao" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        @thongBao
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            setTimeout(function () {
+                var toast = document.getElementById('toastThongBao');
+                if (toast) {
+                    toast.classList.remove('show');
+                    toast.classList.add('hide');
+                }
+            }, 3000); // 3 giây
+        </script>
+    }
 </body>
 </html>

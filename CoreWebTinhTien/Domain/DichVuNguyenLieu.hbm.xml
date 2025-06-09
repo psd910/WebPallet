@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CoreWebTinhTien.Domain.DichVuNguyenLieu, CoreWebTinhTien" table="DichVuNguyenLieu" >
+    <id name="Id" column="Id" type="int">
+      <generator class="identity"/>
+    </id>
+    <property name="DichVuId" column="DichVuId" type="int" />
+    <property name="NguyenLieuId" column="NguyenLieuId" type="int" />
+    <property name="SoLuong" column="SoLuong" type="int"  />
+  </class>
+
+</hibernate-mapping>

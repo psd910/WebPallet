@@ -12,5 +12,7 @@ namespace CoreWebTinhTien.Domain
         public virtual string Ten { get; set; }
         public virtual string Ma { get; set; }
         public virtual int CongTyId { get; set; }
+        //public virtual string NguyenLieuIds { get; set; }
+        
     }
 }

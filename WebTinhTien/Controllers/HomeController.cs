@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebTinhTien.Authorize;
 
 namespace WebTinhTien.Controllers
 {
+    [RBACAuthorize]
     public class HomeController : Controller
     {
         public ActionResult Index()

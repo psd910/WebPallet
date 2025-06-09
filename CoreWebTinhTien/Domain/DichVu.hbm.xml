@@ -7,6 +7,8 @@
     <property name="Ten" column="Ten" type="string" length="500" />
     <property name="Ma" column="Ma" type="string" length="100" />
     <property name="CongTyId" column="CongTyId" type="int" />
+    <!--<property name="NguyenLieuIds" column="NguyenLieuIds" type="string" length="500" />-->
+    
   </class>
 
 </hibernate-mapping>

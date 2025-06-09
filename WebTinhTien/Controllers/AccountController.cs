@@ -3,6 +3,7 @@ using CoreWebTinhTien.IService;
 using System.Web.Mvc;
 using WebTinhTien.Models;
 using CoreWebTinhTien.Ioc;
+using System;
 
 namespace WebTinhTien.Controllers
 {
@@ -11,11 +12,13 @@ namespace WebTinhTien.Controllers
         [HttpGet]
         public ActionResult Login()
         {
+            if (Session["NguoiDung"] != null) return RedirectToAction("Index", "Home");
             return View();
         }
         [HttpPost]
         public ActionResult Login(NguoiDungModel model)
         {
+            if (Session["NguoiDung"] != null) return RedirectToAction("Index", "Home");
             if (ModelState.IsValid)
             {
                 var nguoiDungSrv = IoC.Resolve<INguoiDungService>();
@@ -24,7 +27,7 @@ namespace WebTinhTien.Controllers
                 if (nguoiDung != null)
                 {
                     // Tạo session, cookie, hoặc FormsAuthentication ở đây
-                    Session["NguoiDung"] = nguoiDung;
+                    Session["NguoiDung"] = nguoiDung.TenDangNhap;
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -35,6 +38,13 @@ namespace WebTinhTien.Controllers
             return View(model);
         }
 
-
+        public ActionResult Logout()
+        {
+            // Xoá session
+            Session.Clear();
+            Session.Abandon();
+            return RedirectToAction("Login", "Account");
+        }
+        
     }
 }

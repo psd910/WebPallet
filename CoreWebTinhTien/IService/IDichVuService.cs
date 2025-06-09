@@ -5,6 +5,6 @@ namespace CoreWebTinhTien.IService
 {
     public interface IDichVuService : IBaseService<DichVu, int>
     {
-
+        DichVu GetDichVuByMa(string ma);
     }
 }

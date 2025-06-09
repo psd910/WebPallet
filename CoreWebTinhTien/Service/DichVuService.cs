@@ -14,5 +14,9 @@ namespace CoreWebTinhTien.Service
         public DichVuService(string sessionFactoryConfigPath) : base(sessionFactoryConfigPath)
         { }
 
+        public DichVu GetDichVuByMa(string ma)
+        {
+            return Query.Where(dv=>dv.Ma == ma).FirstOrDefault();
+        }
     }
 }
